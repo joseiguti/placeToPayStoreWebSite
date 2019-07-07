@@ -1,0 +1,23 @@
+<?php
+$title = 'Productos';
+$this->headTitle($title);
+?>
+<h1><?= $this->escapeHtml($title) ?></h1>
+<table class="table">
+	<tr>
+		<th>Articulo</th>
+		<th>Descripción</th>
+		<th></th>
+		<th>Precio/USD</th>
+		<th>Comprar</th>
+	</tr>
+<?php foreach ($products as $product) : ?>
+    <tr>
+		<td><?= $this->escapeHtml($product['name']) ?></td>
+		<td><?= $this->escapeHtml($product['description']) ?></td>
+		<td><img src="<?= $this->escapeHtml($product['url_pic']) ?>"></img></td>
+		<td>$<?= $this->escapeHtml($product['price']) ?></td>
+		<td><a href="<?= $this->url('checkout',['id' => $product['id']] ) ?>">Comprar</a></td>
+	</tr>    
+<?php endforeach; ?>
+</table>

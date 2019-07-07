@@ -32,7 +32,9 @@
         "psr-4": {
             "Application\\": "module/Application/src/",
             "Shop\\": "module/Shop/src/",
-            "Orders\\": "module/Orders/src/"
+            "Orders\\": "module/Orders/src/",
+            "Products\\": "module/Products/src/",
+            "Checkout\\": "module/Checkout/src/"
         }
     },
     "autoload-dev": {

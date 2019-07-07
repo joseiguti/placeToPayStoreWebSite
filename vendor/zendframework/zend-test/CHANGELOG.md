@@ -2,6 +2,52 @@
 
 All notable changes to this project will be documented in this file, in reverse chronological order by release.
 
+## 3.3.0 - 2019-06-11
+
+### Added
+
+- [#76](https://github.com/zendframework/zend-test/pull/76) adds support for PhpUnit 8
+
+### Changed
+
+- Nothing.
+
+### Deprecated
+
+- Nothing.
+
+### Removed
+
+- Nothing.
+
+### Fixed
+
+- Nothing.
+
+## 3.2.2 - 2019-01-08
+
+### Added
+
+- [#75](https://github.com/zendframework/zend-test/pull/75) adds support for PHP 7.3.
+
+### Changed
+
+- Nothing.
+
+### Deprecated
+
+- Nothing.
+
+### Removed
+
+- Nothing.
+
+### Fixed
+
+- [#74](https://github.com/zendframework/zend-test/pull/74) reverts changes introduced in version 3.2.1 to how superglobals are reset
+  between tests, primarily by fixing the root problem -- base URL detection --
+  by requiring a zend-http version that fixes that detection.
+
 ## 3.2.1 - 2018-12-10
 
 ### Added

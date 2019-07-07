@@ -10,11 +10,38 @@
  * control, so do not include passwords or other sensitive information in this
  * file.
  */
-
 return [
     // ...
-    'db' => [
-        'driver' => 'Pdo',
-        'dsn'    => sprintf('sqlite:%s/data/orders.db', realpath(getcwd())),
+    
+    
+    'api' => [
+        
+        'domain' => 'http://0.0.0.0:8080/checkout/validation/',
+        
+        'products' => [
+            
+            'end-point' => 'http://0.0.0.0:8082',
+            
+            'uri' => '/products'
+            
+        ],
+        
+        'pay' => [
+        
+            'end-point' => 'http://0.0.0.0:8082',
+        
+            'uri' => '/pay'
+        
+        ],
+        
+        'query' => [
+        
+            'end-point' => 'http://0.0.0.0:8082',
+        
+            'uri' => '/query'
+        
+        ],
+                
     ],
+    
 ];

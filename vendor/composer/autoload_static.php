@@ -7,8 +7,7 @@ namespace Composer\Autoload;
 class ComposerStaticInit6909bdb113e399e4acf54338db405aa7
 {
     public static $files = array (
-        '34901568a1e26d13dd475cb2c85e0284' => __DIR__ . '/..' . '/zendframework/zend-form/autoload/formElementManagerPolyfill.php',
-        '320cde22f66dd4f5d3fd621d3e88b98f' => __DIR__ . '/..' . '/symfony/polyfill-ctype/bootstrap.php',
+        '10a6847eba8a430a134fad89f4a30a26' => __DIR__ . '/..' . '/zendframework/zend-cache/autoload/patternPluginManagerPolyfill.php',
         'cf97c57bfe0f23854afd2f3818abb7a0' => __DIR__ . '/..' . '/zendframework/zend-diactoros/src/functions/create_uploaded_file.php',
         '9bf37a3d0dad93e29cb4e1b1bfab04e9' => __DIR__ . '/..' . '/zendframework/zend-diactoros/src/functions/marshal_headers_from_sapi.php',
         'ce70dccb4bcc2efc6e94d2ee526e6972' => __DIR__ . '/..' . '/zendframework/zend-diactoros/src/functions/marshal_method_from_sapi.php',
@@ -17,6 +16,8 @@ class ComposerStaticInit6909bdb113e399e4acf54338db405aa7
         '0b0974a5566a1077e4f2e111341112c1' => __DIR__ . '/..' . '/zendframework/zend-diactoros/src/functions/normalize_server.php',
         '1ca3bc274755662169f9629d5412a1da' => __DIR__ . '/..' . '/zendframework/zend-diactoros/src/functions/normalize_uploaded_files.php',
         '40360c0b9b437e69bcbb7f1349ce029e' => __DIR__ . '/..' . '/zendframework/zend-diactoros/src/functions/parse_cookie_header.php',
+        '34901568a1e26d13dd475cb2c85e0284' => __DIR__ . '/..' . '/zendframework/zend-form/autoload/formElementManagerPolyfill.php',
+        '320cde22f66dd4f5d3fd621d3e88b98f' => __DIR__ . '/..' . '/symfony/polyfill-ctype/bootstrap.php',
         '6124b4c8570aa390c21fafd04a26c69f' => __DIR__ . '/..' . '/myclabs/deep-copy/src/DeepCopy/deep_copy.php',
         'dc55c110342095dce21b6357af7bc409' => __DIR__ . '/..' . '/zendframework/zend-test/autoload/phpunit-class-aliases.php',
     );
@@ -83,10 +84,13 @@ class ComposerStaticInit6909bdb113e399e4acf54338db405aa7
         ),
         'P' => 
         array (
+            'Psr\\SimpleCache\\' => 16,
             'Psr\\Log\\' => 8,
             'Psr\\Http\\Message\\' => 17,
             'Psr\\Container\\' => 14,
+            'Psr\\Cache\\' => 10,
             'Prophecy\\' => 9,
+            'Products\\' => 9,
         ),
         'O' => 
         array (
@@ -100,6 +104,10 @@ class ComposerStaticInit6909bdb113e399e4acf54338db405aa7
         array (
             'Doctrine\\Instantiator\\' => 22,
             'DeepCopy\\' => 9,
+        ),
+        'C' => 
+        array (
+            'Checkout\\' => 9,
         ),
         'A' => 
         array (
@@ -299,6 +307,10 @@ class ComposerStaticInit6909bdb113e399e4acf54338db405aa7
         array (
             0 => __DIR__ . '/../..' . '/module/Shop/src',
         ),
+        'Psr\\SimpleCache\\' => 
+        array (
+            0 => __DIR__ . '/..' . '/psr/simple-cache/src',
+        ),
         'Psr\\Log\\' => 
         array (
             0 => __DIR__ . '/..' . '/psr/log/Psr/Log',
@@ -311,9 +323,17 @@ class ComposerStaticInit6909bdb113e399e4acf54338db405aa7
         array (
             0 => __DIR__ . '/..' . '/psr/container/src',
         ),
+        'Psr\\Cache\\' => 
+        array (
+            0 => __DIR__ . '/..' . '/psr/cache/src',
+        ),
         'Prophecy\\' => 
         array (
             0 => __DIR__ . '/..' . '/phpspec/prophecy/src/Prophecy',
+        ),
+        'Products\\' => 
+        array (
+            0 => __DIR__ . '/../..' . '/module/Products/src',
         ),
         'Orders\\' => 
         array (
@@ -330,6 +350,10 @@ class ComposerStaticInit6909bdb113e399e4acf54338db405aa7
         'DeepCopy\\' => 
         array (
             0 => __DIR__ . '/..' . '/myclabs/deep-copy/src/DeepCopy',
+        ),
+        'Checkout\\' => 
+        array (
+            0 => __DIR__ . '/../..' . '/module/Checkout/src',
         ),
         'Application\\' => 
         array (

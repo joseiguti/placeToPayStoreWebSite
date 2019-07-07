@@ -18,10 +18,13 @@ use Zend\Mvc\MvcEvent;
 use Zend\Stdlib\Exception\LogicException;
 use Zend\Stdlib\Parameters;
 use Zend\Stdlib\ResponseInterface;
+use Zend\Test\PHPUnit\TestCaseTrait;
 use Zend\Uri\Http as HttpUri;
 
 abstract class AbstractControllerTestCase extends TestCase
 {
+    use TestCaseTrait;
+
     /**
      * @var \Zend\Mvc\ApplicationInterface
      */
@@ -51,51 +54,24 @@ abstract class AbstractControllerTestCase extends TestCase
     protected $traceError = true;
 
     /**
-     * Original environemnt
-     *
-     * @var array
-     */
-    protected $originalEnvironment;
-
-    /**
      * Reset the application for isolation
+     *
+     * @internal
      */
-    protected function setUp()
+    protected function setUpCompat()
     {
-        $this->originalEnvironment = [
-            'post'   => $_POST,
-            'get'    => $_GET,
-            'cookie' => $_COOKIE,
-            'server' => $_SERVER,
-            'env'    => $_ENV,
-            'files'  => $_FILES,
-        ];
-
-        $_POST   = [];
-        $_GET    = [];
-        $_COOKIE = [];
-        $_SERVER = [];
-        $_ENV    = [];
-        $_FILES  = [];
-
         $this->usedConsoleBackup = Console::isConsole();
         $this->reset();
     }
 
     /**
      * Restore params
+     *
+     * @internal
      */
-    protected function tearDown()
+    protected function tearDownCompat()
     {
         Console::overrideIsConsole($this->usedConsoleBackup);
-
-        // Restore the original environment
-        $_POST   = $this->originalEnvironment['post'];
-        $_GET    = $this->originalEnvironment['get'];
-        $_COOKIE = $this->originalEnvironment['cookie'];
-        $_SERVER = $this->originalEnvironment['server'];
-        $_ENV    = $this->originalEnvironment['env'];
-        $_FILES  = $this->originalEnvironment['files'];
 
         // Prevent memory leak
         $this->reset();

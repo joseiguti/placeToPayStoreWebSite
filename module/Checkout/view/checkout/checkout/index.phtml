@@ -1,0 +1,50 @@
+<?php
+
+$title = 'Checkout';
+$this->headTitle($title);
+?>
+<h1><?= $this->escapeHtml($title) ?></h1>
+<?php
+
+$customer_name = $form->get('customer_name');
+$customer_name->setAttribute('class', 'form-control');
+$customer_name->setAttribute('placeholder', 'Customer name');
+
+$customer_email = $form->get('customer_email');
+$customer_email->setAttribute('class', 'form-control');
+$customer_email->setAttribute('placeholder', 'Customer email');
+
+$customer_mobile = $form->get('customer_mobile');
+$customer_mobile->setAttribute('class', 'form-control');
+$customer_mobile->setAttribute('placeholder', 'Customer mobile');
+
+$submit = $form->get('submit');
+$submit->setAttribute('class', 'btn btn-primary');
+
+$form->setAttribute('action', $this->url('checkout', ['action' => 'index','id' => $product_id]));
+$form->prepare();
+
+echo $this->form()->openTag($form);
+?>
+
+<div class="form-group">
+    <?= $this->formLabel($customer_name) ?>
+    <?= $this->formElement($customer_name) ?>
+    <?= $this->formElementErrors()->render($customer_name, ['class' => 'help-block']) ?>
+</div>
+
+<div class="form-group">
+    <?= $this->formLabel($customer_email) ?>
+    <?= $this->formElement($customer_email) ?>
+    <?= $this->formElementErrors()->render($customer_email, ['class' => 'help-block']) ?>
+</div>
+
+<div class="form-group">
+    <?= $this->formLabel($customer_mobile) ?>
+    <?= $this->formElement($customer_mobile) ?>
+    <?= $this->formElementErrors()->render($customer_mobile, ['class' => 'help-block']) ?>
+</div>
+
+<?= $this->formHidden($form->get('product_id')) ?>
+<?= $this->formSubmit($form->get('submit')) ?>
+<?= $this->form()->closeTag() ?>

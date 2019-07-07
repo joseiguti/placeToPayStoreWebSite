@@ -29,4 +29,6 @@ return [
     'Application',
     'Shop',
     'Orders',
+    'Products',
+    'Checkout',
 ];

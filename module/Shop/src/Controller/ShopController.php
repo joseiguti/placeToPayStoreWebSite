@@ -3,22 +3,24 @@ namespace Shop\Controller;
 
 use Zend\Mvc\Controller\AbstractActionController;
 use Zend\View\Model\ViewModel;
-use Orders\Model\OrdersTable;
 
 class ShopController extends AbstractActionController
 {
-    // Add this property:
-    private $table;
+    private $apiConfig;
     
-    // Add this constructor:
-    public function __construct(OrdersTable $table)
-    {
-        $this->table = $table;
+    public function __construct($apiConfig){
+        
+        $this->apiConfig = $apiConfig;
     }
     
     public function indexAction()
     {
         
+        $products = new \Products\Business\ProductsBusiness($this->apiConfig['products']);
+        
+        return new ViewModel([
+            'products' => $products->getAllProducts(),
+        ]);
     }
 
 }
