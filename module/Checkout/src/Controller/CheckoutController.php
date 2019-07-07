@@ -30,7 +30,7 @@ class CheckoutController extends AbstractActionController
         
         $orderBusiness->updateById($requestId, $status['status']);
         
-        var_export($response);
+        return ['paymentinfo' => $response[0]];
     }
     
     public function indexAction()

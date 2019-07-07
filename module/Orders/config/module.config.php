@@ -7,7 +7,7 @@ use Zend\ServiceManager\Factory\InvokableFactory;
 return [
     'controllers' => [
         'factories' => [
-            Controller\OrdersController::class => InvokableFactory::class,
+            #Controller\OrdersController::class => InvokableFactory::class,
         ],
     ],
     

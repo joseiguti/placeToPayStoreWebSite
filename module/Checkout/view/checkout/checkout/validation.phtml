@@ -1,6 +1,32 @@
+<script type="text/javascript">
+<!--
+	setTimeout(function() {
+	  location.reload();
+	}, 30000);
+//-->
+</script>
 <?php
-
 $title = 'Validation';
 $this->headTitle($title);
 ?>
 <h1><?= $this->escapeHtml($title) ?></h1>
+<?php 
+if ($paymentinfo['status']=='REJECTED'){
+?>
+<h3 style="color: red">Lo sentimos, su pago ha sido rechazado.</h3>
+<?php 
+}else if ($paymentinfo['status']=='APPROVED'){
+?>
+<h3 style="color: green">Felicidades, su pago ha sido aprobado.</h3>
+<?php 
+}else{
+?>
+<h3 style="color: orange;">Un momento por favor, estamos validando tu pago.</h3>
+<?php    
+}
+?>
+<h5>Información de su pago:</h5>
+<h5>Nombre: <?= $paymentinfo['customer_name'] ?></h5>
+<h5>Email: <?= $paymentinfo['customer_email'] ?></h5>
+<h5>Teléfono: <?= $paymentinfo['customer_mobile'] ?></h5>
+<a href="/shop">Seguir comprando</a>

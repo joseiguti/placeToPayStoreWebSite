@@ -47,6 +47,27 @@ class OrdersBusiness {
         return $response;
     }
     
+    public function getOrders (){
+        
+        $apiConfig = $this->apiConfig;
+        
+        $request = new Request();
+        
+        $request->getHeaders()->addHeaders([
+            'Accept' => 'application/json'
+        ]);
+        
+        $request->setUri($apiConfig['end-point'] . $apiConfig['uri']);
+        
+        $request->setMethod('GET');
+        
+        $client = new Client();
+        
+        $response = $client->dispatch($request);
+        
+        return json_decode($response->getBody(), true);
+    }
+    
     public function getOrderById ($id){
     
         $apiConfig = $this->apiConfig;
